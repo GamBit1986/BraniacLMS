@@ -29,11 +29,12 @@
 
   {% include 'includes/main_menu.html' %}
 
+
   {% block messages %}
   {% include 'includes/messages.html' %}
   {% endblock messages %}
 
-  <div class="container-md">
+
 
     {% block content %}
 
@@ -65,6 +66,7 @@
           {% else %}
           <li><a href="{% url 'authapp:login' %}">Войти</a></li>
           {% endif %}
+
         </ul>
         </p>
       </div>
@@ -147,6 +149,7 @@
     });
   </script>
   {% endblock js %}
+
 
 </body>
 

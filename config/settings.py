@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "markdownify.apps.MarkdownifyConfig",
+
     "social_django",
     "mainapp",
     "authapp",
@@ -156,3 +157,4 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+
