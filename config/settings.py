@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "social_django",
     "mainapp",
     "authapp",
+    "crispy_forms",
 ]
 
 MIDDLEWARE = [
@@ -157,3 +158,4 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
+CRISPY_TEMPLATE_PACK = "bootstrap4"
