@@ -168,6 +168,7 @@ MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 
+
 LOG_FILE = BASE_DIR / "var" / "log" / "main_log.log"
 
 LOGGING = {
@@ -228,3 +229,4 @@ CELERY_RESULT_BACKEND = "redis://localhost:6379"
 # Email as files for debug
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = "var/email-messages/"
+
