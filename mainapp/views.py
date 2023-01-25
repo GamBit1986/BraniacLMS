@@ -1,4 +1,5 @@
 import logging
+
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
@@ -10,7 +11,6 @@ from django.template.loader import render_to_string
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, DetailView, ListView, TemplateView, UpdateView, View
-
 
 from mainapp import forms as mainapp_forms
 from mainapp import models as mainapp_models
@@ -92,7 +92,6 @@ class CoursesDetailView(TemplateView):
         else:
             context["feedback_list"] = cached_feedback
 
-
         return context
 
 
@@ -142,6 +141,7 @@ class ContactsPageView(TemplateView):
 
 class DocSitePageView(TemplateView):
     template_name = "mainapp/doc_site.html"
+
 
 class LogView(TemplateView):
     template_name = "mainapp/log_view.html"
