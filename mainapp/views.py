@@ -1,4 +1,5 @@
 import logging
+
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
@@ -10,7 +11,6 @@ from django.template.loader import render_to_string
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, DetailView, ListView, TemplateView, UpdateView, View
-
 
 from mainapp import forms as mainapp_forms
 from mainapp import models as mainapp_models
@@ -89,9 +89,16 @@ class CoursesDetailView(TemplateView):
                 .select_related()
             )
             cache.set(f"feedback_list_{pk}", context["feedback_list"], timeout=300)  # 5 minutes
+
+            # Archive object for tests --->
+            """ import pickle
+
+            with open(f"mainapp/fixtures/005_feedback_list_{pk}.bin", "wb") as outf:
+                pickle.dump(context["feedback_list"], outf) """
+            # <--- Archive object for tests
+
         else:
             context["feedback_list"] = cached_feedback
-
 
         return context
 
@@ -142,6 +149,7 @@ class ContactsPageView(TemplateView):
 
 class DocSitePageView(TemplateView):
     template_name = "mainapp/doc_site.html"
+
 
 class LogView(TemplateView):
     template_name = "mainapp/log_view.html"
